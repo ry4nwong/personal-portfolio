@@ -4,7 +4,7 @@ from .models import Project, StackItem, SummarySection
 class StackItemSerializer(serializers.ModelSerializer):
     class Meta:
         model = StackItem
-        fields = ['name']
+        fields = ['name', 'icon']
 
 class ProjectSummarySerializer(serializers.ModelSerializer):
     class Meta:
