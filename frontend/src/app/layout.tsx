@@ -2,16 +2,16 @@ import type { Metadata } from "next";
 import { Sora, Inter } from "next/font/google";
 import "./globals.css";
 
-import NavBar from "./components/navbar";
+import NavBar from "./components/nav/NavBar";
 
 const sora = Sora({
-	variable: "--font-sora",
 	subsets: ["latin"],
+	display: "swap",
 });
 
 const inter = Inter({
-	variable: "--font-inter",
 	subsets: ["latin"],
+	display: "swap",
 });
 
 export const metadata: Metadata = {
@@ -20,14 +20,16 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
 	children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+}: {
+	children: React.ReactNode;
+}) {
 	return (
 		<html lang="en">
-			<body className={`${sora.variable} ${inter.variable} antialiased`}>
-				<NavBar />
-				{children}
+			<body className={`${sora.className} ${inter.className} antialiased`}>
+				<div className="">
+					<NavBar />
+					{children}
+				</div>
 			</body>
 		</html>
 	);
