@@ -5,18 +5,18 @@ import remarkGfm from 'remark-gfm'
 import FormattedDate from '@/app/components/FormattedDate'
 
 interface StackItem {
-    name: string
-    icon: string
+  name: string
+  icon: string
 }
 
 interface Project {
-    title: string
-    slug: string
-    start_date: string
-    end_date: string
-    stack: StackItem[]
-    description: string
-    github_url: string
+  title: string
+  slug: string
+  start_date: string
+  end_date: string
+  stack: StackItem[]
+  description: string
+  github_url: string
 }
 
 export default async function SlugProjectPage({ params, }: { params: Promise<{ slug: string }> }) {
@@ -26,13 +26,25 @@ export default async function SlugProjectPage({ params, }: { params: Promise<{ s
   const project: Project = await res.json()
 
   return (
-    <div className="max-w-5xl mx-auto px-10 py-10 bg-[var(--background)]">
-      <h1 className="text-4xl font-bold text-left pb-4 text-[var(--foreground)]">
-        {project.title}
-      </h1>
-      <FormattedDate 
-        start={project.start_date} 
-        end={project.end_date} 
+    <main className="max-w-5xl mx-auto px-10 py-10 bg-[var(--background)] mt-20">
+      <div className='flex justify-between'>
+        <h1 className="text-4xl font-bold text-left pb-4 text-[var(--foreground)]">
+          {project.title}
+        </h1>
+        {project.github_url && (
+            <button
+              type="button"
+              className="px-4 rounded-full bg-[var(--card-bg)] border border-[var(--border)] text-[var(--foreground)] text-sm font-bold"
+            >
+              <Link href={project.github_url} target="_blank" rel="noopener noreferrer" className="hover:underline">
+                View on GitHub
+              </Link>
+            </button>
+        )}
+      </div>
+      <FormattedDate
+        start={project.start_date}
+        end={project.end_date}
         className="pb-8 text-[var(--secondary)]"
       />
       <ul className="flex flex-wrap gap-2 pb-2">
@@ -59,9 +71,6 @@ export default async function SlugProjectPage({ params, }: { params: Promise<{ s
       <div className="prose prose-lg max-w-none">
         <ReactMarkdown remarkPlugins={[[remarkGfm, { breaks: true }]]}>{project.description}</ReactMarkdown>
       </div>
-      {project.github_url && (
-        <Link href={project.github_url}>GitHub</Link>
-      )}
-    </div>
+    </main>
   )
 }  

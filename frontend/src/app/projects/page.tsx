@@ -20,9 +20,10 @@ export default async function ProjectPage() {
   }
 
   const projects: Project[] = await res.json();
+  projects.sort((a, b) => new Date(b.start_date).getTime() - new Date(a.start_date).getTime());
 
   return (
-    <div className="max-w-5xl mx-auto px-15 py-10">
+    <main className="max-w-5xl mx-auto px-15 py-10 mt-20">
       <h1 className="text-4xl font-bold text-left pb-4 text-[var(--foreground)]">
         Projects
       </h1>
@@ -59,6 +60,6 @@ export default async function ProjectPage() {
           </Link>
         ))}
       </div>
-    </div>
+    </main>
   )
 }
