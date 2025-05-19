@@ -1,10 +1,10 @@
 import Link from "next/link";
 import Image from 'next/image';
-import NavItemList from "./NavItemList";
+import NavItemList from "./navitemlist";
 
 export default function NavBar() {
   return (
-    <nav className="fixed w-full top-0 py-3 px-12 bg-[#1c1e21] flex justify-between items-center z-50">
+    <nav className="fixed w-full top-0 py-2.5 px-12 bg-[var(--background)] border-b border-[var(--border)] flex justify-between items-center z-50">
       <div>
         <Link href="/" className="flex items-center gap-2 py-2 text-lg text-[var(--foreground)] hover:text-[var(--primary)] font-bold transition">
           {/* <Image src="/computer.svg" alt="Home" width={24} height={24} /> */}
@@ -31,17 +31,17 @@ export default function NavBar() {
         </div>
 
         <ul className="flex gap-5 items-center list-none">
-          <li className="cursor-pointer">
+          {/* <li className="cursor-pointer">
             <Image src="/theme.svg" alt="Theme" width={24} height={24} />
-          </li>
+          </li> */}
           <li>
             <Link href="https://github.com/ry4nwong" target="_blank" rel="noopener noreferrer">
-              <Image src="/github.svg" alt="GitHub" width={24} height={24} />
+              <Image src="/logos/github.svg" alt="GitHub" width={24} height={24} />
             </Link>
           </li>
           <li>
             <Link href="https://www.linkedin.com/in/ryanwong20" target="_blank" rel="noopener noreferrer">
-              <Image src="/linkedin.svg" alt="LinkedIn" width={28} height={28} />
+              <Image src="/logos/linkedin.svg" alt="LinkedIn" width={28} height={28} />
             </Link>
           </li>
 

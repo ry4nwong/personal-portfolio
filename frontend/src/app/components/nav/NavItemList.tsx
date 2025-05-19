@@ -1,4 +1,4 @@
-import NavItem from "./NavItem";
+import NavItem from "./navitem";
 
 export default function NavItemList({ className }: { className?: string }) {
     return (
