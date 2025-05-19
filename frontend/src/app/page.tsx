@@ -1,103 +1,175 @@
-import Image from "next/image";
+'use client'
+import Link from 'next/link'
+import Image from 'next/image';
+import AnimatedButton from './components/home/animated-button';
+import LogoCarousel from './components/home/logo-carousel';
+import FormattedDate from './components/FormattedDate';
+import { useIsVisible } from './hooks/visibility';
+import { useRef } from 'react';
 
 export default function Home() {
-  return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm/6 text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-[family-name:var(--font-geist-mono)] font-semibold">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
+  const ref1 = useRef<HTMLDivElement>(null);
+  const isVisible1 = useIsVisible(ref1);
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
+  const ref2 = useRef<HTMLDivElement>(null);
+  const isVisible2 = useIsVisible(ref2);
+
+  const ref3 = useRef<HTMLDivElement>(null);
+  const isVisible3 = useIsVisible(ref3);
+
+  const ref4 = useRef<HTMLDivElement>(null);
+  const isVisible4 = useIsVisible(ref4);
+
+  return (
+    <main className="flex flex-col gap-40">
+      <div className="min-h-screen flex flex-col flex-1 items-center justify-between w-full lg:pt-25 pt-10 hero-bg bg-top">
+        <div className="flex flex-col max-w-7xl lg:flex-row items-center justify-between w-full flex-grow px-10 2xl:px-0 py-20 lg:py-0 mb-10">
+          <div className="flex-1 text-center">
+            <h2 className="text-7xl mb-20 leading-tight typewriter">
+              Hi, I'm
+              <span className="font-bold"> Ryan!</span>
+            </h2>
+
+            <p className="text-lg max-w-2xl text-[var(--foreground)] mb-15 mx-auto lg:mx-0">
+              A software engineer with a passion for building things from 0-1.
+              Feel free to explore my page, or get in touch with me!
+            </p>
+            <ul className="flex items-center gap-15 justify-center">
+              <li>
+                <AnimatedButton href="/projects" text="My Projects --->" />
+              </li>
+              <li>
+                <AnimatedButton href="#connect" text="Let's Connect --->" />
+              </li>
+            </ul>
+          </div>
+
+          <div className="flex-1 flex justify-center lg:justify-end mt-10 ">
+            <img
+              src="/dark-memoji.jpeg"
+              alt="Ryan Wong"
+              className="w-60 md:w-90 h-60 md:h-90 object-cover rounded-full border-4 border-[var(--border)]"
             />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+          </div>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
+        <div className="mb-10">
+          <Link href="#mission">
+            <Image
+              src="/downarrow.svg"
+              alt="Arrow Down"
+              width={24}
+              height={24}
+              className="animate-bounce w-8 h-8 text-[var(--foreground)]"
+            />
+          </Link>
+        </div>
+      </div>
+
+      <section id="mission" className="flex justify-center lg:px-10">
+        <div ref={ref1} className={`flex flex-row px-15 py-15 items-center w-full max-w-7xl border border-[var(--border)] bg-[#2a3b63] lg:rounded-3xl transition-opacity ease-in duration-1000 ${isVisible1 ? "opacity-100" : "opacity-0"}`}>
+          <div className="flex flex-col justify-center">
+            <p className="md:text-2xl text-xl font-bold leading-relaxed text-[var(--foreground)] mb-10">
+              My mission is to assist businesses in building practical, scalable tools by combining backend systems knowledge, robust API design, and simple, yet effective frontends.
+            </p>
+            <div className="hidden md:block px-10">
+              <LogoCarousel />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="experience" className="flex justify-center lg:px-10 px-5">
+        <div ref={ref2} className={`grid md:grid-cols-2 gap-1 lg:gap-4 max-w-7xl w-full transition-opacity ease-in duration-1000 ${isVisible2 ? "opacity-100" : "opacity-0"}`}>
+          <div className="flex md:flex-col justify-between px-20 py-10 md:border md:border-[var(--border)] md:bg-[#000000] rounded-2xl">
+            <h2 className="text-4xl md:mb-10 font-semibold">
+              My Experience
+            </h2>
+            <AnimatedButton href="/experience" text="View More --->" />
+          </div>
+          <div className="flex flex-col gap-3 bg-[var(--secondary)] border border-[var(--border)] rounded-2xl px-15 py-10 h-50">
+            <Image
+              src="/intuit.svg"
+              alt="Intuit"
+              width={48}
+              height={24}
+              className="w-20 h-10"
+            />
+            <h2 className="text-xl text-[var(--foreground)]">
+              Software Engineer Intern at Intuit
+            </h2>
+            <p className="text-[var(--muted)] text-sm">
+              2023
+            </p>
+          </div>
+          <div />
+          <div className="flex flex-col gap-3 bg-[var(--secondary)] border border-[var(--border)] rounded-2xl px-15 py-10 h-50">
+            <Image
+              src="/sephora.svg"
+              alt="Sephora"
+              width={48}
+              height={24}
+              className="w-25 h-10"
+            />
+            <h2 className="text-xl text-[var(--foreground)]">
+              Software Engineer Intern at Sephora
+            </h2>
+            <p className="text-[var(--muted)] text-sm">
+              2022
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section id="projects" ref={ref3} className={`flex flex-row max-w-7xl px-10 transition-opacity ease-in duration-1000 ${isVisible3 ? "opacity-100" : "opacity-0"} self-center`}>
+        <div className="flex-col px-5 max-w-sm">
+          <h2 className="text-4xl mb-10 font-semibold">
+            Featured Projects
+          </h2>
+          <AnimatedButton href="/projects" text="See All --->" />
+        </div>
+        <div className="grid lg:grid-cols-2 gap-4 w-full">
+          <Link
+            href={`/projects/festival-recommender`}
+            className="block bg-[var(--card-bg)] border border-[var(--border)] rounded-lg p-6 hover:shadow-lg transition"
+          >
+            <h2 className="text-xl font-semibold text-[var(--primary)] mb-1">
+              Festival Recommender
+            </h2>
+            <FormattedDate
+              start="2024-10-02"
+              end=""
+              className="text-sm text-[var(--muted)] mb-2"
+            />
+            <p className="text-[var(--foreground)]">An AI-backed festival recommendation chatbot I am currently building!</p>
+          </Link>
+          <Link
+            href={`/projects/festival-recommender`}
+            className="block bg-[var(--card-bg)] border border-[var(--border)] rounded-lg p-6 hover:shadow-lg transition"
+          >
+            <h2 className="text-xl font-semibold text-[var(--primary)] mb-1">
+              Gainz
+            </h2>
+            <FormattedDate
+              start="2024-07-02"
+              end="2024-10-02"
+              className="text-sm text-[var(--muted)] mb-2"
+            />
+            <p className="text-[var(--foreground)]">Application for logging and tracking workouts to keep you accountable.</p>
+          </Link>
+        </div>
+      </section>
+
+      <section id="connect" className="flex justify-center mb-30 lg:px-10">
+        <div ref={ref4} className={`flex mb-30 px-20 py-10 w-full items-center justify-between flex-row max-w-7xl border border-[var(--border)] bg-[#000000] lg:rounded-3xl transition-opacity ease-in duration-1000 ${isVisible4 ? "opacity-100" : "opacity-0"}`}>
+          <h2 className="text-3xl mb-10 font-semibold text-center w-full">
+            Let's Connect!
+          </h2>
+          
+        </div>
+        <div className="flex flex-col">
+
+        </div>
+      </section>
+    </main>
   );
 }
