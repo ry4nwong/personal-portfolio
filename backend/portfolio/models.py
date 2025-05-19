@@ -3,7 +3,7 @@ from django.db import models
 class StackItem(models.Model):
     id = models.AutoField(primary_key=True)
     name = models.CharField(max_length=20)
-    icon = models.CharField(max_length=20, default="")
+    icon = models.CharField(max_length=30, default="")
 
     def __str__(self):
         return self.name

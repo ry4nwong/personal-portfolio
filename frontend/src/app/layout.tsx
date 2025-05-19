@@ -2,7 +2,8 @@ import type { Metadata } from "next";
 import { Sora, Inter } from "next/font/google";
 import "./globals.css";
 
-import NavBar from "./components/nav/NavBar";
+import NavBar from "./components/nav/navbar";
+import Footer from "./components/footer";
 
 const sora = Sora({
 	subsets: ["latin"],
@@ -26,9 +27,12 @@ export default function RootLayout({
 	return (
 		<html lang="en">
 			<body className={`${sora.className} ${inter.className} antialiased`}>
-				<div className="">
+				<div className="flex flex-col min-h-screen">
 					<NavBar />
-					{children}
+					<div className="flex-grow">
+						{children}
+					</div>
+					<Footer />
 				</div>
 			</body>
 		</html>
