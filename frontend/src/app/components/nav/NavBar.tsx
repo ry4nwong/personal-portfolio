@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Image from 'next/image';
-import NavItemList from "./navitemlist";
+import NavItemList from "./NavItemList";
 
 export default function NavBar() {
   return (

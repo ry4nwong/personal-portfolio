@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Sora, Inter } from "next/font/google";
 import "./globals.css";
 
-import NavBar from "./components/nav/navbar";
+import NavBar from "./components/nav/NavBar";
 import Footer from "./components/footer";
 
 const sora = Sora({

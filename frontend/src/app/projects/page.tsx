@@ -24,10 +24,10 @@ export default async function ProjectPage() {
 
   return (
     <main className="max-w-5xl mx-auto px-15 py-10 mt-20">
-      <h1 className="text-4xl font-bold text-left pb-4 text-[var(--foreground)]">
+      <h1 className="text-4xl font-bold text-left mb-5 text-[var(--foreground)]">
         Projects
       </h1>
-      <p className="text-lg pb-8 text-[var(--secondary)]">
+      <p className="text-lg mb-10 text-[var(--secondary)]">
         Some of the projects I have worked on, including a rave/festival recommendation chatbot and a fitness tracking application.
         You can find the source code for most of them on my{' '}
         <a
