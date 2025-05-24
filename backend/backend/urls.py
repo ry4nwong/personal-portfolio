@@ -17,10 +17,12 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
-from portfolio.views import project_list, project_detail
+from portfolio.views import project_list, project_detail, experience_list, experience_detail
 
 urlpatterns = [
     path("admin/", admin.site.urls),
     path('api/projects/', project_list, name='project-list'),
     path('api/projects/<slug:slug>/', project_detail, name='project-detail'),
+    path('api/experience/', experience_list, name='experience-list'),
+    path('api/experience/<slug:slug>/', experience_detail, name='experience-detail'),
 ]

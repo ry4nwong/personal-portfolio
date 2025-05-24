@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from .models import Project, StackItem, SummarySection
+from .models import Project, StackItem, SummarySection, Experience
 
 class StackItemSerializer(serializers.ModelSerializer):
     class Meta:
@@ -15,6 +15,17 @@ class ProjectDetailSerializer(serializers.ModelSerializer):
     stack = StackItemSerializer(many=True)
     class Meta:
         model = Project
+        fields = '__all__'
+
+class ExperienceSummarySerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Experience
+        fields = ['title', 'company', 'slug', 'icon', 'start_date', 'end_date', 'header']
+
+class ExperienceDetailSerializer(serializers.ModelSerializer):
+    stack = StackItemSerializer(many=True)
+    class Meta:
+        model = Experience
         fields = '__all__'
 
 class SummarySectionSerializer(serializers.ModelSerializer):

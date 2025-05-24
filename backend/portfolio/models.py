@@ -11,6 +11,7 @@ class StackItem(models.Model):
 class Experience(models.Model):
     id = models.AutoField(primary_key=True)
     title = models.CharField(max_length=50, blank=False)
+    company = models.CharField(max_length=50, default="")
     slug = models.SlugField(max_length=50, unique=True, blank=False, default=id)
     icon = models.CharField(max_length=30, default="")
     start_date = models.DateField(blank=False)
@@ -20,7 +21,7 @@ class Experience(models.Model):
     stack = models.ManyToManyField(StackItem, related_name="experiences")
 
     def __str__(self):
-        return self.name
+        return self.company
 
 class Project(models.Model):
     id = models.AutoField(primary_key=True)
