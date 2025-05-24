@@ -3,7 +3,7 @@ import Image from 'next/image';
 
 export default function Footer() {
     return (
-        <footer className="flex mt-10 flex-col lg:flex-row justify-between gap-5 border-t border-[var(--border)] bg-[var(--background)] py-10 md:px-30 2xl:px-60 px-10 text-md text-[var(--muted)]">
+        <footer className="flex flex-col lg:flex-row justify-between gap-5 border-t border-[var(--border)] bg-[var(--background)] py-10 md:px-30 2xl:px-60 px-10 text-md text-[var(--muted)]">
             <div className="flex flex-col gap-6">
                 <div className="flex flex-wrap gap-4">
                     {/* <p className="text-lg mb-2">Connect With Me</p> */}
