@@ -5,11 +5,6 @@ import "./globals.css";
 import NavBar from "./components/nav/NavBar";
 import Footer from "./components/footer";
 
-const sora = Sora({
-	subsets: ["latin"],
-	display: "swap",
-});
-
 const inter = Inter({
 	subsets: ["latin"],
 	display: "swap",
@@ -26,8 +21,8 @@ export default function RootLayout({
 }) {
 	return (
 		<html lang="en">
-			<body className={`${sora.className} ${inter.className} antialiased`}>
-				<div className="flex flex-col min-h-screen">
+			<body className={`${inter.className} antialiased`}>
+				<div className="min-h-screen">
 					<NavBar />
 					<div className="flex-grow">
 						{children}
