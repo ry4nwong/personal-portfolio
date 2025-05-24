@@ -1,31 +1,29 @@
 @import "tailwindcss";
 
 :root {
-  --background: #151517;
+  --background: #070707;
   --foreground: #f8f8ff;
   --primary: #f27f0c;
-  --secondary: #cacdd1;
+  --secondary: #e9c654;
   --muted: #67707d;
   --hover: #94a3b8;
-  --border: #303439;
+  --border: #282a2e;
   --card-bg: #2f3136;
-}
-
-.gradient-bg {
-  background: linear-gradient(145deg, #2a3147, #1e293b);
+  --card-bg-dark: #151517;
 }
 
 .accent-gradient {
-  background: linear-gradient(121deg, #b215bd, #0f5bc4);
+  background: linear-gradient(121deg, #15bd5e, #0f5bc4);
 }
 
 .dark-gradient {
-  background: #24262A;
-  background: linear-gradient(145deg, rgba(36, 38, 42, 1) 0%, rgba(42, 49, 71, 1) 50%, rgba(31, 41, 55, 1) 100%);
-}
-
-.dark-bg {
-  background: linear-gradient(94deg, #27292b 0%, #1e1f22 58%);
+  background: #1c1d21;
+  background: linear-gradient(
+    160deg,  
+    #1c1d21 0%, 
+    #2E3240 40%, 
+    #3C4C7A 100% 
+  );
 }
 
 .prose a {
