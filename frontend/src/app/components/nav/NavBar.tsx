@@ -46,9 +46,6 @@ export default function NavBar() {
         </div>
 
         <ul className="flex gap-5 items-center list-none">
-          {/* <li className="cursor-pointer">
-            <Image src="/theme.svg" alt="Theme" width={24} height={24} />
-          </li> */}
           <li>
             <Link href="https://github.com/ry4nwong" target="_blank" rel="noopener noreferrer">
               <Image src="/logos/github.svg" alt="GitHub" width={24} height={24} />
