@@ -6,8 +6,8 @@ import FormattedDate from './components/FormattedDate';
 
 export default function Home() {
   return (
-    <main className="flex flex-col flex-1 items-center w-full lg:pt-25 pt-15 bg-[var(--background)]">
-      <div className="grid grid-cols-1 md:grid-cols-2 items-start w-full flex-grow px-5 py-10 mb-10 max-w-6xl gap-8">
+    <main className="flex flex-col flex-1 items-center w-full ">
+      <div className="grid grid-cols-1 md:grid-cols-2 items-start w-full flex-grow mb-10 gap-8">
         <div className="grid grid-cols-1 gap-8">
           <div className="text-left px-10 py-10 border border-[var(--border)] bg-[var(--card-bg-dark)] rounded-2xl">
             <div className="mb-8">
@@ -17,13 +17,8 @@ export default function Home() {
               Hi, I'm <span className="font-bold">Ryan!</span>
             </h2>
             <p className="text-md text-[var(--foreground)] w-full leading-relaxed">
-              Full-stack software engineer based in the <span className="font-bold">Bay Area</span>. Self-proclaimed <span className="text-[var(--primary)]">vibe coder</span>. I love to build cool projects!
+              Full-stack software engineer based in the <span className="font-bold">Bay Area</span>. Self-proclaimed gym rat and DJ. I love to build cool things!
             </p>
-          </div>
-
-          <div className="border border-[var(--border)] rounded-2xl dark-gradient px-10 py-10">
-            <LogoCarousel />
-            {/* <p className="text-lg font-semibold mt-10">My Tech Stack</p> */}
           </div>
 
           <iframe src="https://open.spotify.com/embed/track/4Ug4rZBHDvh8pEfdl1i8H9?utm_source=generator" width="100%" height="152" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy" />
@@ -65,6 +60,11 @@ export default function Home() {
                 2022
               </p>
             </div>
+          </div>
+
+          <div className="border border-[var(--border)] rounded-2xl dark-gradient px-10 py-10">
+            <LogoCarousel />
+            {/* <p className="text-lg font-semibold mt-10">My Tech Stack</p> */}
           </div>
 
           {/* <div className="py-15 px-15 border border-[var(--border)] rounded-2xl ">
@@ -142,7 +142,7 @@ export default function Home() {
 
             <div className="flex flex-col gap-8 border px-4 py-8 border border-[var(--border)] bg-[var(--card-bg)] rounded-2xl items-center">
               <Link href="https://www.linkedin.com/in/ryanwong20" target="_blank" rel="noopener noreferrer" className="hover:bg-[var(--muted)] px-2 py-2 rounded-lg">
-                <Image src="/logos/linkedin.svg" alt="LinkedIn" width={60} height={60} />
+                <Image src="/logos/linkedin.svg" alt="LinkedIn" width={65} height={65} />
               </Link>
               <Link href="https://github.com/ry4nwong" target="_blank" rel="noopener noreferrer" className="hover:bg-[var(--muted)] px-2 py-2 rounded-lg">
                 <Image src="/logos/github.svg" alt="GitHub" width={50} height={50} />
@@ -164,7 +164,7 @@ export default function Home() {
             </p>
           </div>
 
-          <div className="flex flex-row gap-8">
+          <div className="flex justify-between w-full gap-8">
             <div className="flex flex-col gap-8 border px-4 py-8 border border-[var(--border)] bg-[var(--card-bg)] rounded-2xl items-center">
               <Link href="https://soundcloud.com/fakeoutdubstep" target="_blank" rel="noopener noreferrer" className="hover:bg-[var(--muted)] px-2 py-2 rounded-lg">
                 <Image src="/logos/soundcloud.svg" alt="SoundCloud" width={60} height={60} />

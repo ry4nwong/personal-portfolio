@@ -22,9 +22,9 @@ export default function RootLayout({
 	return (
 		<html lang="en">
 			<body className={`${inter.className} antialiased`}>
-				<div className="min-h-screen">
+				<div className="flex flex-col items-center min-h-screen">
 					<NavBar />
-					<div className="flex-grow">
+					<div className="flex-grow lg:mt-35 mt-25 px-10 w-full max-w-6xl mb-20">
 						{children}
 					</div>
 					<Footer />

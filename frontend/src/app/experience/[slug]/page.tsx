@@ -28,40 +28,43 @@ export default async function SlugExperiencePage({ params, }: { params: Promise<
   const experience: Experience = await res.json()
 
   return (
-    <main className="max-w-5xl mx-auto px-10 py-10 bg-[var(--background)] mt-20">
-      <div className='flex flex-col'>
-        <Image src={experience.icon} alt="Company Logo" width={50} height={50} className="w-50 h-30" />
+    <main className="mx-auto">
+      <div className="border px-10 py-10 border border-[var(--border)] bg-[var(--card-bg-dark)] rounded-2xl ">
+        <div className="mb-8">
+          <Image src={experience.icon} alt="Company Logo" width={50} height={50} className="w-30 h-10" />
+        </div>
         <h1 className="text-3xl font-semibold text-left pb-4 text-[var(--foreground)]">
           {experience.title}
         </h1>
+        <FormattedDate
+          start={experience.start_date}
+          end={experience.end_date}
+          className="mb-8 text-sm text-[var(--muted)]"
+        />
+        <ul className="flex flex-wrap gap-2 pb-2">
+          {experience.stack.map((item: StackItem, index: number) => (
+            <li key={index}>
+              <button
+                type="button"
+                className="flex items-center gap-1.5 px-3 py-1 rounded-full bg-[var(--card-bg)] border border-[var(--border)] text-[var(--foreground)] text-sm font-bold"
+              >
+                {item.icon && (
+                  <Image
+                    src={item.icon}
+                    alt={item.name}
+                    width={20}
+                    height={20}
+                    className="w-5 h-5"
+                  />
+                )}
+                {item.name}
+              </button>
+            </li>
+          ))}
+        </ul>
       </div>
-      <FormattedDate
-        start={experience.start_date}
-        end={experience.end_date}
-        className="mb-8 text-sm text-[var(--muted)]"
-      />
-      <ul className="flex flex-wrap gap-2 pb-2">
-        {experience.stack.map((item: StackItem, index: number) => (
-          <li key={index}>
-            <button
-              type="button"
-              className="flex items-center gap-1.5 px-3 py-1 rounded-full bg-[var(--card-bg)] border border-[var(--border)] text-[var(--foreground)] text-sm font-bold"
-            >
-              {item.icon && (
-                <Image
-                  src={item.icon}
-                  alt={item.name}
-                  width={20}
-                  height={20}
-                  className="w-5 h-5"
-                />
-              )}
-              {item.name}
-            </button>
-          </li>
-        ))}
-      </ul>
-      <div className="prose prose-lg max-w-none leading-relaxed">
+
+      <div className="prose prose-lg max-w-none leading-relaxed px-10">
         <ReactMarkdown remarkPlugins={[[remarkGfm, { breaks: true }]]}>{experience.description}</ReactMarkdown>
       </div>
     </main>
