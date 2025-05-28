@@ -1,29 +1,21 @@
 import Link from 'next/link'
 import Image from 'next/image'
-import ReactMarkdown from 'react-markdown'
-import remarkGfm from 'remark-gfm'
 import FormattedDate from '@/app/components/FormattedDate'
-
-interface StackItem {
-  name: string
-  icon: string
-}
-
-interface Project {
-  title: string
-  slug: string
-  start_date: string
-  end_date: string
-  stack: StackItem[]
-  description: string
-  github_url: string
-}
+import { getStackDetails } from '@/app/utils/getStackDetails'
+import { getMarkdownData } from '@/app/utils/getMarkdown'
+import projects from '@/data/projects/projects.json';
+import stackItems from '@/data/stackItems.json'
 
 export default async function SlugProjectPage({ params, }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params
-  const res = await fetch(`http://localhost:8000/api/projects/${slug}`)
+  const project = projects.find((project) => project.slug === slug)
 
-  const project: Project = await res.json()
+  if (!project) {
+    return <div className="text-center text-red-500 mt-100">Failed to load projects</div>;
+  }
+
+  const stack = await getStackDetails(project.stack, stackItems);
+  const description = await getMarkdownData(project.description_url);
 
   return (
     <main className="mx-auto">
@@ -49,7 +41,7 @@ export default async function SlugProjectPage({ params, }: { params: Promise<{ s
           className="mb-8 text-sm text-[var(--muted)]"
         />
         <ul className="flex flex-wrap gap-2 pb-2">
-          {project.stack.map((item: StackItem, index: number) => (
+          {stack.map((item, index) => (
             <li key={index}>
               <button
                 type="button"
@@ -70,9 +62,11 @@ export default async function SlugProjectPage({ params, }: { params: Promise<{ s
           ))}
         </ul>
       </div>
-      <div className="prose prose-lg max-w-none leading-relaxed px-10">
-        <ReactMarkdown remarkPlugins={[[remarkGfm, { breaks: true }]]}>{project.description}</ReactMarkdown>
-      </div>
+
+      <article
+        className="prose"
+        dangerouslySetInnerHTML={{ __html: description }}
+      />
     </main>
   )
 }  

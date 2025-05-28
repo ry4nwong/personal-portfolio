@@ -1,0 +1,72 @@
+[
+        {
+        "title": "Personal Portfolio",
+        "slug": "personal-portfolio",
+        "start_date": "April 2025",
+        "end_date": "Present",
+        "stack": ["Next.js", "Docker"],
+        "header": "The current website you are on!",
+        "description_url": "src/data/projects/personal_portfolio.md",
+        "github_url": ""
+    },
+    {
+        "title": "IntakeRx",
+        "slug": "intake-agent",
+        "start_date": "March 2025",
+        "end_date": "April 2025",
+        "stack": ["Docker", "Pipecat", "Twilio", "OpenAI", "Python", "FastAPI"],
+        "header": "Live Voice Agent for Patient Intake",
+        "description_url": "src/data/projects/intake_agent.md",
+        "github_url": ""
+    },
+    {
+        "title": "TickExchange",
+        "slug": "tick-exchange",
+        "start_date": "January 2025",
+        "end_date": "",
+        "stack": ["Python"],
+        "header": "Stock Trading Simulation w/ Concurrency",
+        "description_url": "src/data/projects/tick_exchange.md",
+        "github_url": "https://github.com/ry4nwong/concurrent-stock-book"
+    },
+    {
+        "title": "Festival Recommender",
+        "slug": "festival-recommender",
+        "start_date": "October 2024",
+        "end_date": "Present",
+        "stack": ["Docker", "PostgreSQL", "LangChain", "React Native", "FastAPI"],
+        "header": "Festival Recommendation Chatbot",
+        "description_url": "src/data/projects/festival_recommender.md",
+        "github_url": "https://github.com/ry4nwong/spotify-festival-recommender"
+    },
+    {
+        "title": "Gainz",
+        "slug": "gainz",
+        "start_date": "June 2024",
+        "end_date": "October 2024",
+        "stack": ["Docker", "MongoDB", "GraphQL", "React", "Spring Boot"],
+        "header": "Fitness Tracking Application",
+        "description_url": "src/data/projects/gainz.md",
+        "github_url": "https://github.com/ry4nwong/WorkoutTracker"
+    },
+    {
+        "title": "UCSD Food Locker",
+        "slug": "food-locker",
+        "start_date": "September 2021",
+        "end_date": "January 2022",
+        "stack": ["Node.js", "Firebase", "React"],
+        "header": "COVID-19 Dining Hall Solution for UCSD",
+        "description_url": "src/data/projects/food_locker.md",
+        "github_url": ""
+    },
+    {
+        "title": "Cantamar Auto Detailing",
+        "slug": "cantamar-auto-detailing",
+        "start_date": "May 2020",
+        "end_date": "October 2021",
+        "stack": ["Javascript", "HTML", "CSS", "MySQL"],
+        "header": "Automotive Detailing Business Website",
+        "description_url": "src/data/projects/cad.md",
+        "github_url": ""
+    }
+]

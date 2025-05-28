@@ -12,7 +12,7 @@ export default function FormattedDate({ start, end, className }: { start: string
 				month: 'long',
 			});
 
-		const range = `${format(start)} – ${end ? format(end) : 'Present'}`;
+		const range = `${start} ${end ? `- ${end}` : ''}`;
 		setDisplay(range);
 	}, [start, end]);
 
