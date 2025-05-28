@@ -24,6 +24,17 @@ export default async function AboutPage() {
                             />
                         </div>
                     </div>
+
+                    <div className="border border-[var(--border)] rounded-2xl overflow-hidden shadow-lg">
+                        <iframe
+                            className="w-full aspect-video"
+                            src="https://www.youtube.com/embed/pPIPsNIfYJ8"
+                            title="Mazda 6 Detailing - Satisfying Auto Detailing!"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            referrerPolicy="strict-origin-when-cross-origin"
+                            allowFullScreen
+                        ></iframe>
+                    </div>
                 </div>
 
                 <div className="flex flex-col gap-8">
@@ -31,21 +42,19 @@ export default async function AboutPage() {
                         <Image src="/headshot.jpeg" alt="Headshot" width={50} height={50} className="w-full h-full object-cover rounded-2xl" />
                     </div>
                     <div className="flex flex-col px-10 py-10 gap-5 border border-[var(--border)] bg-[var(--card-bg-dark)] rounded-2xl">
-                    <div className="mb-3 px-3">
-                        <BookOpen size={40} />
-                    </div>
-                    <h1 className="px-3 text-4xl font-bold text-left text-[var(--foreground)]">
-                        History
-                    </h1>
-                    <div className="">
+                        <div className="mb-3 px-3">
+                            <BookOpen size={40} />
+                        </div>
+                        <h1 className="px-3 text-4xl font-bold text-left text-[var(--foreground)]">
+                            History
+                        </h1>
                         <article
                             className="prose"
                             dangerouslySetInnerHTML={{ __html: historySection }}
                         />
                     </div>
                 </div>
-                </div>
-                
+
             </div>
 
         </main>
