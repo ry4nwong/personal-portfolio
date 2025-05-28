@@ -1,0 +1,3 @@
+Interestingly enough, my journey into programming began as a practical need. During the COVID-19 pandemic, I had launched a small auto detailing business and wanted a website to promote it. Rather than hiring someone, I decided to build one myself. **That experience sparked a deeper interest in how software works and what else I could create with code.**
+
+That curiosity ultimately led me to UC San Diego, where I pursued a degree in Computer Science. Over the years, I went from building static sites to designing full-stack applications and developing backend systems at companies like Intuit and Sephora. Along the way, I kept experimenting with side projects that let me blend my personal interests with software engineering.
