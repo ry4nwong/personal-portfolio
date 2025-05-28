@@ -1,0 +1,24 @@
+[
+    {
+        "title": "Software Engineer Intern",
+        "company": "Intuit",
+        "slug": "intuit",
+        "icon": "/intuit.svg",
+        "start_date": "June 2023",
+        "end_date": "September 2023",
+        "header": "At Intuit, I built migration tools that made it easier and faster for over 1.5 million QuickBooks users to move from Desktop to Online with fewer bugs and smoother onboarding.",
+        "description_url": "src/data/experience/intuit.md",
+        "stack": ["Java", "MongoDB", "React", "Spring Boot", "JUnit 5", "Redux"]
+    },
+    {
+        "title": "Software Engineer Intern",
+        "company": "Sephora",
+        "slug": "sephora",
+        "icon": "/sephora.svg",
+        "start_date": "June 2022",
+        "end_date": "September 2022",
+        "header": "I aided in building a real-time inventory dashboard for Sephora's US distribution centers, allowing over 1,500 employees to track item stock across U.S. centers while shortening downtime and cutting storage costs.",
+        "description_url": "src/data/experience/sephora.md",
+        "stack": ["MySQL", "Spring Boot", "Redis", "Angular", "Material UI", "Postman"]
+    }
+]
