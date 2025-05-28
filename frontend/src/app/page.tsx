@@ -1,175 +1,226 @@
-'use client'
 import Link from 'next/link'
 import Image from 'next/image';
-import AnimatedButton from './components/home/animated-button';
+import { ArrowUpRight, CircleUser, Mail } from 'lucide-react';
 import LogoCarousel from './components/home/logo-carousel';
 import FormattedDate from './components/FormattedDate';
-import { useIsVisible } from './hooks/visibility';
-import { useRef } from 'react';
 
 export default function Home() {
-  const ref1 = useRef<HTMLDivElement>(null);
-  const isVisible1 = useIsVisible(ref1);
-
-  const ref2 = useRef<HTMLDivElement>(null);
-  const isVisible2 = useIsVisible(ref2);
-
-  const ref3 = useRef<HTMLDivElement>(null);
-  const isVisible3 = useIsVisible(ref3);
-
-  const ref4 = useRef<HTMLDivElement>(null);
-  const isVisible4 = useIsVisible(ref4);
-
   return (
-    <main className="flex flex-col gap-40">
-      <div className="min-h-screen flex flex-col flex-1 items-center justify-between w-full lg:pt-25 pt-10 hero-bg bg-top">
-        <div className="flex flex-col max-w-7xl lg:flex-row items-center justify-between w-full flex-grow px-10 2xl:px-0 py-20 lg:py-0 mb-10">
-          <div className="flex-1 text-center">
-            <h2 className="text-7xl mb-20 leading-tight typewriter">
-              Hi, I'm
-              <span className="font-bold"> Ryan!</span>
+    <main className="flex flex-col flex-1 items-center w-full ">
+      <div className="grid grid-cols-1 md:grid-cols-2 items-start w-full flex-grow mb-10 gap-8">
+        <div className="grid grid-cols-1 gap-8">
+          <div className="text-left px-10 py-10 border border-[var(--border)] bg-[var(--card-bg-dark)] rounded-2xl">
+            <div className="mb-8">
+              <CircleUser color='white' size={48} />
+            </div>
+            <h2 className="text-6xl mb-6 leading-tight">
+              Hi, I'm <span className="font-bold">Ryan!</span>
             </h2>
-
-            <p className="text-lg max-w-2xl text-[var(--foreground)] mb-15 mx-auto lg:mx-0">
-              A software engineer with a passion for building things from 0-1.
-              Feel free to explore my page, or get in touch with me!
+            <p className="text-md text-[var(--foreground)] w-full leading-relaxed">
+              Full-stack software engineer based in the <span className="font-bold">Bay Area</span>. Self-proclaimed gym rat and DJ. I love to build cool things!
             </p>
-            <ul className="flex items-center gap-15 justify-center">
-              <li>
-                <AnimatedButton href="/projects" text="My Projects --->" />
-              </li>
-              <li>
-                <AnimatedButton href="#connect" text="Let's Connect --->" />
-              </li>
-            </ul>
           </div>
 
-          <div className="flex-1 flex justify-center lg:justify-end mt-10 ">
-            <img
-              src="/dark-memoji.jpeg"
-              alt="Ryan Wong"
-              className="w-60 md:w-90 h-60 md:h-90 object-cover rounded-full border-4 border-[var(--border)]"
-            />
-          </div>
-        </div>
-        <div className="mb-10">
-          <Link href="#mission">
-            <Image
-              src="/downarrow.svg"
-              alt="Arrow Down"
-              width={24}
-              height={24}
-              className="animate-bounce w-8 h-8 text-[var(--foreground)]"
-            />
-          </Link>
-        </div>
-      </div>
+          <iframe src="https://open.spotify.com/embed/track/4Ug4rZBHDvh8pEfdl1i8H9?utm_source=generator" width="100%" height="152" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy" />
 
-      <section id="mission" className="flex justify-center lg:px-10">
-        <div ref={ref1} className={`flex flex-row px-15 py-15 items-center w-full max-w-7xl border border-[var(--border)] bg-[#2a3b63] lg:rounded-3xl transition-opacity ease-in duration-1000 ${isVisible1 ? "opacity-100" : "opacity-0"}`}>
-          <div className="flex flex-col justify-center">
-            <p className="md:text-2xl text-xl font-bold leading-relaxed text-[var(--foreground)] mb-10">
-              My mission is to assist businesses in building practical, scalable tools by combining backend systems knowledge, robust API design, and simple, yet effective frontends.
-            </p>
-            <div className="hidden md:block px-10">
-              <LogoCarousel />
+          <div className="flex flex-col gap-8 py-10 px-10 border border-[var(--border)] rounded-2xl bg-[var(--card-bg-dark)]">
+            <Link href="/experience" className="flex justify-between w-full px-5 hover:underline">
+              <h2 className="text-4xl font-semibold mb-2">
+                My Experience
+              </h2>
+              <ArrowUpRight />
+            </Link>
+            <div className="flex flex-col gap-3 bg-[var(--card-bg)] border border-[var(--border)] rounded-2xl px-15 py-8">
+              <Image
+                src="/intuit.svg"
+                alt="Intuit"
+                width={48}
+                height={24}
+                className="w-15 h-5"
+              />
+              <h2 className="text-lg text-[var(--foreground)]">
+                Software Engineer Intern at Intuit
+              </h2>
+              <p className="text-[var(--muted)] text-sm">
+                2023
+              </p>
+            </div>
+            <div className="flex flex-col gap-3 bg-[var(--card-bg)] border border-[var(--border)] rounded-2xl px-15 py-8">
+              <Image
+                src="/sephora.svg"
+                alt="Sephora"
+                width={48}
+                height={24}
+                className="w-20 h-5"
+              />
+              <h2 className="text-lg text-[var(--foreground)]">
+                Software Engineer Intern at Sephora
+              </h2>
+              <p className="text-[var(--muted)] text-sm">
+                2022
+              </p>
             </div>
           </div>
-        </div>
-      </section>
 
-      <section id="experience" className="flex justify-center lg:px-10 px-5">
-        <div ref={ref2} className={`grid md:grid-cols-2 gap-1 lg:gap-4 max-w-7xl w-full transition-opacity ease-in duration-1000 ${isVisible2 ? "opacity-100" : "opacity-0"}`}>
-          <div className="flex md:flex-col justify-between px-20 py-10 md:border md:border-[var(--border)] md:bg-[#000000] rounded-2xl">
-            <h2 className="text-4xl md:mb-10 font-semibold">
-              My Experience
-            </h2>
-            <AnimatedButton href="/experience" text="View More --->" />
+          <div className="border border-[var(--border)] rounded-2xl dark-gradient px-10 py-10">
+            <LogoCarousel />
+            {/* <p className="text-lg font-semibold mt-10">My Tech Stack</p> */}
           </div>
-          <div className="flex flex-col gap-3 bg-[var(--secondary)] border border-[var(--border)] rounded-2xl px-15 py-10 h-50">
-            <Image
-              src="/intuit.svg"
-              alt="Intuit"
-              width={48}
-              height={24}
-              className="w-20 h-10"
-            />
-            <h2 className="text-xl text-[var(--foreground)]">
-              Software Engineer Intern at Intuit
-            </h2>
-            <p className="text-[var(--muted)] text-sm">
-              2023
+
+          {/* <div className="py-15 px-15 border border-[var(--border)] rounded-2xl ">
+            <p className="text-lg leading-relaxed">
+              "I’ve always loved exploring ways to bridge my personal passions—whether it’s music or fitness—with software engineering, and this site is a reflection of that intersection. 
+              This website serves as a space to showcase my experience, document creative side projects, and share the hobbies that inspire me."
+            </p>
+          </div> */}
+
+          <div className="flex flex-col gap-5 py-10 px-10 border border-[var(--border)] rounded-2xl">
+            <div className="flex flex-col gap-2 mb-2">
+              <h2 className="text-3xl font-semibold px-4">
+                🚀 Contact Me
+              </h2>
+              <p className="px-5">
+                I will respond as soon as possible!
+              </p>
+            </div>
+
+            <form className="flex flex-col gap-4 w-full max-w-2xl">
+              <div>
+                <input
+                  type="text"
+                  id="name"
+                  name="name"
+                  required
+                  className="block w-full p-2 border border-[var(--border)] rounded-lg text-base focus:border-blue-500 bg-[var(--card-bg)]"
+                  placeholder="Name"
+                />
+              </div>
+
+              <div>
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  required
+                  className="block w-full p-2 border border-[var(--border)] rounded-lg text-base focus:border-blue-500 bg-[var(--card-bg)]"
+                  placeholder="Email"
+                />
+              </div>
+
+              <div>
+                <textarea
+                  id="message"
+                  name="message"
+                  rows={5}
+                  required
+                  className="block w-full p-2 border border-[var(--border)] rounded-lg text-sm focus:border-blue-500 bg-[var(--card-bg)]"
+                  placeholder="Message"
+                ></textarea>
+              </div>
+
+              <button
+                type="submit"
+                className="px-6 py-2 rounded-lg font-semibold bg-[var(--muted)] transition cursor-pointer"
+              >
+                Send Message
+              </button>
+            </form>
+          </div>
+        </div>
+
+        <div className="grid grid-cols-1 gap-8">
+          <div className="flex justify-between w-full gap-8">
+            <div className="border border-[var(--border)] rounded-2xl accent-gradient bg-[var(--card-bg)] py-10 w-full flex justify-center">
+              <Image
+                src="/avatar.png"
+                alt="Avatar"
+                width={20}
+                height={20}
+                className="w-70 h-70 object-contain"
+              />
+            </div>
+
+            <div className="flex flex-col gap-8 border px-4 py-8 border border-[var(--border)] bg-[var(--card-bg)] rounded-2xl items-center">
+              <Link href="https://www.linkedin.com/in/ryanwong20" target="_blank" rel="noopener noreferrer" className="hover:bg-[var(--muted)] px-2 py-2 rounded-lg">
+                <Image src="/logos/linkedin.svg" alt="LinkedIn" width={65} height={65} />
+              </Link>
+              <Link href="https://github.com/ry4nwong" target="_blank" rel="noopener noreferrer" className="hover:bg-[var(--muted)] px-2 py-2 rounded-lg">
+                <Image src="/logos/github.svg" alt="GitHub" width={50} height={50} />
+              </Link>
+              <Link href="https://medium.com/@rnwong2002" target="_blank" rel="noopener noreferrer" className="hover:bg-[var(--muted)] px-2 py-2 rounded-lg">
+                <Image src="/logos/medium.svg" alt="LinkedIn" width={50} height={50} />
+              </Link>
+              <Link href="mailto:rnwong2002@gmail.com" target="_blank" rel="noopener noreferrer" className="hover:bg-[var(--muted)] px-2 py-2 rounded-lg">
+                <Mail size={40} />
+              </Link>
+
+            </div>
+          </div>
+
+          <div className="py-15 px-15 border border-[var(--border)] rounded-2xl bg-[var(--card-bg-dark)]">
+            <p className="text-lg leading-relaxed">
+              "I’ve always loved exploring ways to bridge my personal passions—whether it’s music or fitness—with software engineering, and this site is a reflection of that intersection. 
+              This website serves as a space to showcase my experience, document creative side projects, and share the hobbies that inspire me."
             </p>
           </div>
-          <div />
-          <div className="flex flex-col gap-3 bg-[var(--secondary)] border border-[var(--border)] rounded-2xl px-15 py-10 h-50">
-            <Image
-              src="/sephora.svg"
-              alt="Sephora"
-              width={48}
-              height={24}
-              className="w-25 h-10"
-            />
-            <h2 className="text-xl text-[var(--foreground)]">
-              Software Engineer Intern at Sephora
-            </h2>
-            <p className="text-[var(--muted)] text-sm">
-              2022
-            </p>
+
+          <div className="flex justify-between w-full gap-8">
+            <div className="flex flex-col gap-8 border px-4 py-8 border border-[var(--border)] bg-[var(--card-bg)] rounded-2xl items-center">
+              <Link href="https://soundcloud.com/fakeoutdubstep" target="_blank" rel="noopener noreferrer" className="hover:bg-[var(--muted)] px-2 py-2 rounded-lg">
+                <Image src="/logos/soundcloud.svg" alt="SoundCloud" width={60} height={60} />
+              </Link>
+            </div>
+            <div className="flex flex-col gap-10 border border-[var(--border)] px-10 py-10 rounded-2xl bg-[#000000] w-full items-center">
+              <Image src="/logos/hevy.png" alt="LinkedIn" width={50} height={50} className="h-50 w-50 rounded-2xl object-contain" />
+
+              <Link href="https://hevy.com/user/ryanwong" target="_blank" rel="noopener noreferrer" className="flex flex-wrap justify-center gap-5 w-full hover:underline py-5">
+                <h2 className="text-xl font-semibold">
+                  Follow My Workout Progress
+                </h2>
+              </Link>
+            </div>
+          </div>
+
+          <div className="flex flex-col gap-8 py-5">
+            <Link href="/projects" className="flex justify-between w-full px-5 hover:underline">
+              <h2 className="text-4xl font-semibold mb-2">
+                Featured Projects
+              </h2>
+              <ArrowUpRight />
+            </Link>
+
+            <Link
+              href={`/projects/festival-recommender`}
+              className="block bg-[var(--card-bg)] border border-[var(--border)] rounded-2xl p-10 hover:shadow-lg transition"
+            >
+              <h2 className="text-xl font-semibold text-[var(--primary)] mb-1">
+                Festival Recommender
+              </h2>
+              <FormattedDate
+                start="2024-10-02"
+                end=""
+                className="text-sm text-[var(--muted)] mb-2"
+              />
+              <p className="text-[var(--foreground)]">An AI-backed festival recommendation chatbot I am currently building!</p>
+            </Link>
+
+            <Link
+              href="/projects/festival-recommender"
+              className="block bg-[var(--card-bg)] border border-[var(--border)] rounded-2xl p-10 hover:shadow-lg transition"
+            >
+              <h2 className="text-xl font-semibold text-[var(--primary)] mb-1">
+                Gainz
+              </h2>
+              <FormattedDate
+                start="2024-07-02"
+                end="2024-10-02"
+                className="text-sm text-[var(--muted)] mb-2"
+              />
+              <p className="text-[var(--foreground)]">Application for logging and tracking workouts to keep you accountable.</p>
+            </Link>
           </div>
         </div>
-      </section>
-
-      <section id="projects" ref={ref3} className={`flex flex-row max-w-7xl px-10 transition-opacity ease-in duration-1000 ${isVisible3 ? "opacity-100" : "opacity-0"} self-center`}>
-        <div className="flex-col px-5 max-w-sm">
-          <h2 className="text-4xl mb-10 font-semibold">
-            Featured Projects
-          </h2>
-          <AnimatedButton href="/projects" text="See All --->" />
-        </div>
-        <div className="grid lg:grid-cols-2 gap-4 w-full">
-          <Link
-            href={`/projects/festival-recommender`}
-            className="block bg-[var(--card-bg)] border border-[var(--border)] rounded-lg p-6 hover:shadow-lg transition"
-          >
-            <h2 className="text-xl font-semibold text-[var(--primary)] mb-1">
-              Festival Recommender
-            </h2>
-            <FormattedDate
-              start="2024-10-02"
-              end=""
-              className="text-sm text-[var(--muted)] mb-2"
-            />
-            <p className="text-[var(--foreground)]">An AI-backed festival recommendation chatbot I am currently building!</p>
-          </Link>
-          <Link
-            href={`/projects/festival-recommender`}
-            className="block bg-[var(--card-bg)] border border-[var(--border)] rounded-lg p-6 hover:shadow-lg transition"
-          >
-            <h2 className="text-xl font-semibold text-[var(--primary)] mb-1">
-              Gainz
-            </h2>
-            <FormattedDate
-              start="2024-07-02"
-              end="2024-10-02"
-              className="text-sm text-[var(--muted)] mb-2"
-            />
-            <p className="text-[var(--foreground)]">Application for logging and tracking workouts to keep you accountable.</p>
-          </Link>
-        </div>
-      </section>
-
-      <section id="connect" className="flex justify-center mb-30 lg:px-10">
-        <div ref={ref4} className={`flex mb-30 px-20 py-10 w-full items-center justify-between flex-row max-w-7xl border border-[var(--border)] bg-[#000000] lg:rounded-3xl transition-opacity ease-in duration-1000 ${isVisible4 ? "opacity-100" : "opacity-0"}`}>
-          <h2 className="text-3xl mb-10 font-semibold text-center w-full">
-            Let's Connect!
-          </h2>
-          
-        </div>
-        <div className="flex flex-col">
-
-        </div>
-      </section>
-    </main>
+      </div>
+    </main >
   );
 }

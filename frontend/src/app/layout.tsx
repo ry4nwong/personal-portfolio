@@ -2,13 +2,8 @@ import type { Metadata } from "next";
 import { Sora, Inter } from "next/font/google";
 import "./globals.css";
 
-import NavBar from "./components/nav/navbar";
+import NavBar from "./components/nav/NavBar";
 import Footer from "./components/footer";
-
-const sora = Sora({
-	subsets: ["latin"],
-	display: "swap",
-});
 
 const inter = Inter({
 	subsets: ["latin"],
@@ -26,10 +21,10 @@ export default function RootLayout({
 }) {
 	return (
 		<html lang="en">
-			<body className={`${sora.className} ${inter.className} antialiased`}>
-				<div className="flex flex-col min-h-screen">
+			<body className={`${inter.className} antialiased`}>
+				<div className="flex flex-col items-center min-h-screen">
 					<NavBar />
-					<div className="flex-grow">
+					<div className="flex-grow lg:mt-35 mt-25 px-10 w-full max-w-6xl mb-20">
 						{children}
 					</div>
 					<Footer />

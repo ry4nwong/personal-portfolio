@@ -26,12 +26,13 @@ export default async function SlugProjectPage({ params, }: { params: Promise<{ s
   const project: Project = await res.json()
 
   return (
-    <main className="max-w-5xl mx-auto px-10 py-10 bg-[var(--background)] mt-20">
-      <div className='flex justify-between'>
-        <h1 className="text-4xl font-bold text-left pb-4 text-[var(--foreground)]">
-          {project.title}
-        </h1>
-        {project.github_url && (
+    <main className="mx-auto">
+      <div className="border px-10 py-10 border border-[var(--border)] bg-[var(--card-bg-dark)] rounded-2xl ">
+        <div className='flex justify-between'>
+          <h1 className="text-4xl font-bold text-left pb-4 text-[var(--foreground)]">
+            {project.title}
+          </h1>
+          {project.github_url && (
             <button
               type="button"
               className="px-4 rounded-full bg-[var(--card-bg)] border border-[var(--border)] text-[var(--foreground)] text-sm font-bold"
@@ -40,35 +41,36 @@ export default async function SlugProjectPage({ params, }: { params: Promise<{ s
                 View on GitHub
               </Link>
             </button>
-        )}
+          )}
+        </div>
+        <FormattedDate
+          start={project.start_date}
+          end={project.end_date}
+          className="mb-8 text-sm text-[var(--muted)]"
+        />
+        <ul className="flex flex-wrap gap-2 pb-2">
+          {project.stack.map((item: StackItem, index: number) => (
+            <li key={index}>
+              <button
+                type="button"
+                className="flex items-center gap-1.5 px-3 py-1 rounded-full bg-[var(--card-bg)] border border-[var(--border)] text-[var(--foreground)] text-sm font-bold"
+              >
+                {item.icon && (
+                  <Image
+                    src={item.icon}
+                    alt={item.name}
+                    width={20}
+                    height={20}
+                    className="w-5 h-5"
+                  />
+                )}
+                {item.name}
+              </button>
+            </li>
+          ))}
+        </ul>
       </div>
-      <FormattedDate
-        start={project.start_date}
-        end={project.end_date}
-        className="pb-8 text-[var(--secondary)]"
-      />
-      <ul className="flex flex-wrap gap-2 pb-2">
-        {project.stack.map((item: StackItem, index: number) => (
-          <li key={index}>
-            <button
-              type="button"
-              className="flex items-center gap-1.5 px-3 py-1 rounded-full bg-[var(--card-bg)] border border-[var(--border)] text-[var(--foreground)] text-sm font-bold"
-            >
-              {item.icon && (
-                <Image
-                  src={item.icon}
-                  alt={item.name}
-                  width={20}
-                  height={20}
-                  className="w-5 h-5"
-                />
-              )}
-              {item.name}
-            </button>
-          </li>
-        ))}
-      </ul>
-      <div className="prose prose-lg max-w-none">
+      <div className="prose prose-lg max-w-none leading-relaxed px-10">
         <ReactMarkdown remarkPlugins={[[remarkGfm, { breaks: true }]]}>{project.description}</ReactMarkdown>
       </div>
     </main>

@@ -1,40 +1,63 @@
 @import "tailwindcss";
 
 :root {
-  --background: #24262a;
+  --background: #070707;
   --foreground: #f8f8ff;
-  --primary: #f97316;
-  --secondary: #cacdd1;
+  --primary: #f27f0c;
+  --secondary: #e9c654;
   --muted: #67707d;
-  --border: #303439;
+  --hover: #94a3b8;
+  --border: #282a2e;
   --card-bg: #2f3136;
+  --card-bg-dark: #151517;
 }
 
-.hero-bg {
-  background-image: linear-gradient(180deg, #2a3b63 0%, #24262a 100%);
-  background-size: cover;
-  background-position: bottom;
+.accent-gradient {
+  background: linear-gradient(121deg, #15bd5e, #0f5bc4);
+}
+
+.dark-gradient {
+  background: #1c1d21;
+  background: linear-gradient(
+    160deg,  
+    #1c1d21 0%, 
+    #2E3240 40%, 
+    #3C4C7A 100% 
+  );
 }
 
 .prose a {
   color: var(--primary);
+  text-decoration: underline;
 }
 
 .prose h2 {
-  font-size: 1.7rem;
+  font-size: 2rem;
   font-weight: 700;
-  margin-top: 2rem;
-  margin-bottom: 2rem;
+  margin-top: 3rem;
+  margin-bottom: 1rem;
+  line-height: 2;
 }
 
 .prose p {
   margin-bottom: 1rem;
+  padding-left: 1rem;
+  line-height: 2;
 }
 
 .prose ul {
   list-style-type: disc;
-  padding-left: 1.5rem;
+  padding-left: 3rem;
+  line-height: 2;
   margin-bottom: 1rem;
+}
+
+.prose ol {
+  list-style-type: decimal;
+}
+
+.prose code {
+  color: var(--primary);
 }
 
 body {
@@ -48,13 +71,25 @@ html {
 }
 
 @keyframes typing {
-  from { width: 0 }
-  to { width: 70% }
+  from {
+    width: 0
+  }
+
+  to {
+    width: 70%
+  }
 }
 
 @keyframes blink {
-  0%, 100% { border-color: transparent }
-  50% { border-color: white }
+
+  0%,
+  100% {
+    border-color: transparent
+  }
+
+  50% {
+    border-color: white
+  }
 }
 
 .typewriter {
@@ -62,7 +97,7 @@ html {
   overflow: hidden;
   white-space: nowrap;
   border-right: 3px solid;
-  width: 9.5ch;
+  width: 9.6ch;
   animation:
     typing 1.2s steps(10, end),
     blink 0.7s step-end infinite;
@@ -72,11 +107,12 @@ html {
   0% {
     transform: translateX(0%);
   }
+
   100% {
     transform: translateX(-50%);
   }
 }
 
 .scroll-animation {
-  animation: scroll 30s linear infinite;
+  animation: scroll 20s linear infinite;
 }
