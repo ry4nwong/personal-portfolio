@@ -1,31 +1,20 @@
-import Link from 'next/link'
 import Image from 'next/image'
-import ReactMarkdown from 'react-markdown'
-import remarkGfm from 'remark-gfm'
 import FormattedDate from '@/app/components/FormattedDate'
-
-interface StackItem {
-  name: string
-  icon: string
-}
-
-interface Experience {
-  title: string
-  company: string
-  slug: string
-  icon: string
-  start_date: string
-  end_date: string
-  header: string
-  stack: StackItem[]
-  description: string
-}
+import { getStackDetails } from '@/app/utils/getStackDetails'
+import { getMarkdownData } from '@/app/utils/getMarkdown'
+import experiences from '@/data/experience/experience.json'
+import stackItems from '@/data/stackItems.json'
 
 export default async function SlugExperiencePage({ params, }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params
-  const res = await fetch(`http://localhost:8000/api/experience/${slug}`)
+  const experience = experiences.find((experience) => experience.slug === slug)
 
-  const experience: Experience = await res.json()
+  if (!experience) {
+    return <div className="text-center text-red-500 mt-100">Failed to load experience</div>;
+  }
+
+  const stack = await getStackDetails(experience.stack, stackItems);
+  const description = await getMarkdownData(experience.description_url);
 
   return (
     <main className="mx-auto">
@@ -42,7 +31,7 @@ export default async function SlugExperiencePage({ params, }: { params: Promise<
           className="mb-8 text-sm text-[var(--muted)]"
         />
         <ul className="flex flex-wrap gap-2 pb-2">
-          {experience.stack.map((item: StackItem, index: number) => (
+          {stack.map((item, index) => (
             <li key={index}>
               <button
                 type="button"
@@ -64,9 +53,10 @@ export default async function SlugExperiencePage({ params, }: { params: Promise<
         </ul>
       </div>
 
-      <div className="prose prose-lg max-w-none leading-relaxed px-10">
-        <ReactMarkdown remarkPlugins={[[remarkGfm, { breaks: true }]]}>{experience.description}</ReactMarkdown>
-      </div>
+      <article
+        className="prose"
+        dangerouslySetInnerHTML={{ __html: description }}
+      />
     </main>
   )
 }  

@@ -1,28 +1,9 @@
 import Link from 'next/link';
 import { NotebookPen } from 'lucide-react';
 import FormattedDate from '../components/FormattedDate';
-
-interface Project {
-  title: string
-  slug: string
-  start_date: string
-  end_date: string
-  header: string
-  github_url: string
-}
+import projects from '@/data/projects/projects.json';
 
 export default async function ProjectPage() {
-  const res = await fetch('http://localhost:8000/api/projects/', {
-    cache: 'no-store',
-  });
-
-  if (!res.ok) {
-    return <div className="text-center text-red-500 mt-100">Failed to load projects</div>
-  }
-
-  const projects: Project[] = await res.json();
-  projects.sort((a, b) => new Date(b.start_date).getTime() - new Date(a.start_date).getTime());
-
   return (
     <main className="mx-auto">
       <div className="flex flex-col px-10 py-10 gap-5 border border-[var(--border)] bg-[var(--card-bg-dark)] rounded-2xl mb-10">

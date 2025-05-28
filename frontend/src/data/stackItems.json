@@ -1,0 +1,114 @@
+[
+    {
+        "name": "Postman",
+        "icon": "/logos/postman.svg"
+    },
+    {
+        "name": "Material UI",
+        "icon": "/logos/mui.svg"
+    },
+    {
+        "name": "Angular",
+        "icon": "/logos/angular.svg"
+    },
+    {
+        "name": "Redis",
+        "icon": "/logos/redis.svg"
+    },
+    {
+        "name": "Redux",
+        "icon": "/logos/redux.svg"
+    },
+    {
+        "name": "JUnit 5",
+        "icon": "/logos/junit.png"
+    },
+    {
+        "name": "Docker",
+        "icon": "/logos/docker.svg"
+    },
+    {
+        "name": "Pipecat",
+        "icon": "/logos/pipecat.svg"
+    },
+    {
+        "name": "Twilio",
+        "icon": "/logos/twilio.svg"
+    },
+    {
+        "name": "OpenAI",
+        "icon": "/logos/openai.svg"
+    },
+    {
+        "name": "Python",
+        "icon": "/logos/python.svg"
+    },
+    {
+        "name": "Java",
+        "icon": "/logos/java.svg"
+    },
+    {
+        "name": "MongoDB",
+        "icon": "/logos/mongo.svg"
+    },
+    {
+        "name": "Django",
+        "icon": "/logos/django.svg"
+    },
+    {
+        "name": "Next.js",
+        "icon": "/logos/nextjs.svg"
+    },
+    {
+        "name": "Javascript",
+        "icon": "/logos/javascript.svg"
+    },
+    {
+        "name": "CSS",
+        "icon": "/logos/css.svg"
+    },
+    {
+        "name": "HTML",
+        "icon": "/logos/html.svg"
+    },
+    {
+        "name": "MySQL",
+        "icon": "/logos/mysql.svg"
+    },
+    {
+        "name": "Firebase",
+        "icon": "/logos/firebase.svg"
+    },
+    {
+        "name": "Node.js",
+        "icon": "/logos/nodejs.svg"
+    },
+    {
+        "name": "PostgreSQL",
+        "icon": "/logos/postgresql.svg"
+    },
+    {
+        "name": "LangChain",
+        "icon": "/logos/langchain.svg"
+    },
+    {
+        "name": "GraphQL",
+        "icon": "/logos/graphql.svg"
+    },
+    {
+        "name": "React",
+        "icon": "/logos/react.svg"
+    },
+    {
+        "name": "Spring Boot",
+        "icon": "/logos/spring.svg"
+    },
+    {
+        "name": "React Native",
+        "icon": "/logos/react.svg"
+    },
+    {
+        "name": "FastAPI",
+        "icon": "/logos/fastapi.svg"
+    }
+]

@@ -3,8 +3,8 @@ import Image from 'next/image';
 import { getMarkdownData } from '../utils/getMarkdown';
 
 export default async function AboutPage() {
-    const aboutSection = await getMarkdownData('content/about/about.md');
-    const historySection = await getMarkdownData('content/about/history.md');
+    const aboutSection = await getMarkdownData('src/data/about/about.md');
+    const historySection = await getMarkdownData('src/data/about/history.md');
 
     return (
         <main className="mx-auto">
