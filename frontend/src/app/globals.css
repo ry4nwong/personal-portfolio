@@ -28,6 +28,7 @@
 
 .prose a {
   color: var(--primary);
+  text-decoration: underline;
 }
 
 .prose h2 {
