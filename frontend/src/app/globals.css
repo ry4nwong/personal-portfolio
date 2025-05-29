@@ -26,6 +26,11 @@
   );
 }
 
+.card {
+  border: var(--border) solid 1px;
+  border-radius: var(--radius-2xl);
+}
+
 .prose a {
   color: var(--primary);
   text-decoration: underline;
