@@ -1,4 +1,4 @@
-import { useEffect, useState, RefObject } from "react";
+import { useEffect, useState, RefObject } from 'react';
 
 export function useIsVisible(ref: RefObject<HTMLDivElement | null>): boolean {
   const [isIntersecting, setIntersecting] = useState(false);
