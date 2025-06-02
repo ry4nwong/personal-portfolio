@@ -1,6 +1,5 @@
-import Link from 'next/link'
+import Link from 'next/link';
 import Image from 'next/image';
-import { ArrowUpRight, CircleUser, Mail } from 'lucide-react';
 import IntroSection from './components/home/IntroSection';
 import LogoCarousel from './components/home/LogoCarousel';
 import HevyCard from './components/home/HevyCard';

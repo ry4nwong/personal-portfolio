@@ -1,13 +1,13 @@
-import Link from 'next/link'
-import FormattedDate from '@/app/components/FormattedDate'
+import Link from 'next/link';
+import FormattedDate from '@/app/components/FormattedDate';
 import projects from '@/data/projects/projects.json';
 import StackItemList from '@/app/components/StackItemList';
 import MarkdownComponent from '@/app/components/MarkdownComponent';
 
 
-export default async function SlugProjectPage({ params, }: { params: Promise<{ slug: string }> }) {
-  const { slug } = await params
-  const project = projects.find((project) => project.slug === slug)
+export default async function SlugProjectPage({ params }: { params: Promise<{ slug: string }> }) {
+  const { slug } = await params;
+  const project = projects.find((project) => project.slug === slug);
 
   if (!project) {
     return <div className="text-center text-red-500 mt-100">Failed to load projects</div>;
@@ -43,5 +43,5 @@ export default async function SlugProjectPage({ params, }: { params: Promise<{ s
 
       <MarkdownComponent url={project.description_url} />
     </main>
-  )
+  );
 }  
