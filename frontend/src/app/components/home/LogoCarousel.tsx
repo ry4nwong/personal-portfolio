@@ -31,8 +31,8 @@ export default function LogoCarousel() {
     return (
         <div className="overflow-hidden px-2 [mask-image:linear-gradient(to_right,transparent_0,black_100px,black_calc(100%-100px),transparent_100%)]">
             <div className="scroll-animation relative flex whitespace-nowrap gap-8 min-w-full">
-                {logos.map((logo, idx) => (
-                    <Image src={logo.src} alt={logo.alt} width={40} height={40} />
+                {logos.map((logo, index) => (
+                    <Image key={index} src={logo.src} alt={logo.alt} width={40} height={40} />
                 ))}
             </div>
         </div>

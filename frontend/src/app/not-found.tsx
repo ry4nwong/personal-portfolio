@@ -1,4 +1,4 @@
-import AnimatedButton from "./components/home/animated-button";
+import AnimatedButton from "./components/home/AnimatedButton";
 
 export default function NotFound() {
     return (

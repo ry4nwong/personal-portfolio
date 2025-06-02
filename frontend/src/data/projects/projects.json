@@ -7,7 +7,7 @@
         "stack": ["Next.js", "Docker"],
         "header": "The current website you are on!",
         "description_url": "src/data/projects/personal_portfolio.md",
-        "github_url": ""
+        "github_url": "https://github.com/ry4nwong/personal-portfolio"
     },
     {
         "title": "IntakeRx",
