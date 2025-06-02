@@ -16,7 +16,7 @@ export default async function AboutPage() {
             <h1 className="px-3 text-4xl font-bold text-left text-[var(--foreground)]">
               About Me
             </h1>
-            <MarkdownComponent url="src/data/about/about.md" />
+            <MarkdownComponent url="/data/about/about.md" />
           </section>
 
           <section className="border border-[var(--border)] rounded-2xl overflow-hidden shadow-lg">
@@ -37,7 +37,7 @@ export default async function AboutPage() {
             <h1 className="px-3 text-4xl font-bold text-left text-[var(--foreground)]">
               Fitness
             </h1>
-            <MarkdownComponent url="src/data/about/fitness.md" />
+            <MarkdownComponent url="/data/about/fitness.md" />
           </section>
         </div>
 
@@ -75,7 +75,7 @@ export default async function AboutPage() {
             <h1 className="px-3 text-4xl font-bold text-left text-[var(--foreground)]">
               History
             </h1>
-            <MarkdownComponent url="src/data/about/history.md" />
+            <MarkdownComponent url="/data/about/history.md" />
           </section>
 
           <ContactSection />
