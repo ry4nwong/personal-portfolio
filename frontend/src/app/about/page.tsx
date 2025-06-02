@@ -48,6 +48,7 @@ export default async function AboutPage() {
               alt="Headshot"
               width={50}
               height={50}
+              quality={100}
               className="w-full h-full object-cover rounded-2xl"
             />
           </section>
