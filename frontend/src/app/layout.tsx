@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Sora, Inter } from "next/font/google";
 import "./globals.css";
+import emailjs from '@emailjs/browser';
 
 import NavBar from "./components/nav/NavBar";
 import Footer from "./components/Footer";
@@ -9,6 +10,8 @@ const inter = Inter({
 	subsets: ["latin"],
 	display: "swap",
 });
+
+emailjs.init('JNd0vOdj2bMUV9tW9');
 
 export const metadata: Metadata = {
 	title: "Ryan Wong: Personal Portfolio",
