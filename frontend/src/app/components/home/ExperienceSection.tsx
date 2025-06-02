@@ -1,6 +1,6 @@
-import Link from "next/link";
-import Image from "next/image";
-import { ArrowUpRight } from "lucide-react";
+import Link from 'next/link';
+import Image from 'next/image';
+import { ArrowUpRight } from 'lucide-react';
 
 export default function ExperienceSection() {
   return (
@@ -13,7 +13,7 @@ export default function ExperienceSection() {
       </Link>
 
       <Link
-        href={"/experience/intuit"}
+        href="/experience/intuit"
         className="flex flex-col card bg-[var(--card-bg)] gap-3 px-15 py-8 hover:shadow-lg transition"
       >
         <Image
@@ -33,7 +33,7 @@ export default function ExperienceSection() {
 
 
       <Link
-        href={"/experience/intuit"}
+        href="/experience/intuit"
         className="flex flex-col card bg-[var(--card-bg)] gap-3 px-15 py-8 hover:shadow-lg transition"
       >
         <Image

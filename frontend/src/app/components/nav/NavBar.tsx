@@ -1,19 +1,19 @@
 'use client';
-import Link from "next/link";
+import Link from 'next/link';
 import Image from 'next/image';
-import NavItemList from "./NavItemList";
-import { useState, useEffect } from 'react'
+import NavItemList from './NavItemList';
+import { useState, useEffect } from 'react';
 
 export default function NavBar() {
   const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
-      setScrolled(window.scrollY > 10)
-    }
+      setScrolled(window.scrollY > 10);
+    };
 
-    window.addEventListener('scroll', handleScroll)
-    return () => window.removeEventListener('scroll', handleScroll)
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
   return (
@@ -60,5 +60,5 @@ export default function NavBar() {
         </ul>
       </div>
     </nav>
-  )
+  );
 }

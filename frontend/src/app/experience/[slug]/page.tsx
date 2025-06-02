@@ -1,12 +1,12 @@
-import Image from 'next/image'
-import FormattedDate from '@/app/components/FormattedDate'
-import experiences from '@/data/experience/experience.json'
-import StackItemList from '@/app/components/StackItemList'
-import MarkdownComponent from '@/app/components/MarkdownComponent'
+import Image from 'next/image';
+import FormattedDate from '@/app/components/FormattedDate';
+import experiences from '@/data/experience/experience.json';
+import StackItemList from '@/app/components/StackItemList';
+import MarkdownComponent from '@/app/components/MarkdownComponent';
 
-export default async function SlugExperiencePage({ params, }: { params: Promise<{ slug: string }> }) {
-  const { slug } = await params
-  const experience = experiences.find((experience) => experience.slug === slug)
+export default async function SlugExperiencePage({ params }: { params: Promise<{ slug: string }> }) {
+  const { slug } = await params;
+  const experience = experiences.find((experience) => experience.slug === slug);
 
   if (!experience) {
     return <div className="text-center text-red-500 mt-100">Failed to load experience</div>;
@@ -32,5 +32,5 @@ export default async function SlugExperiencePage({ params, }: { params: Promise<
 
       <MarkdownComponent url={experience.description_url} />
     </main>
-  )
+  );
 }  
