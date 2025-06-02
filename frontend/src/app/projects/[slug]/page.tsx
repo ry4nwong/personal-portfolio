@@ -4,12 +4,9 @@ import projects from '@/data/projects/projects.json';
 import StackItemList from '@/app/components/StackItemList';
 import { getMarkdownData } from '@/app/utils/getMarkdown';
 
-export async function generateStaticParams() {
-  return projects.map((project) => ({ slug: project.slug }));
-}
-
-export default async function SlugProjectPage({ params }: { params: { slug: string } }) {
-  const project = projects.find((project) => project.slug === params.slug);
+export default async function SlugProjectPage({ params }: { params: Promise<{ slug: string }> }) {
+  const { slug } = await params;
+  const project = projects.find((project) => project.slug === slug);
 
   if (!project) {
     return <div className="text-center text-red-500 mt-100">Failed to load project</div>;
