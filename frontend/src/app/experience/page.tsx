@@ -1,6 +1,6 @@
 import ExperienceHeader from '../components/experience/ExperienceHeader';
 import ExperienceListItem from '../components/experience/ExperienceListItem';
-import experience from '@/data/experience/experience.json';
+import experience from '@/app/experience/experience.json';
 
 export default async function ExperiencePage() {
   return (

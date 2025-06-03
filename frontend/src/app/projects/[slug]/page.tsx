@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import FormattedDate from '@/app/components/FormattedDate';
-import projects from '@/data/projects/projects.json';
+import projects from '@/app/projects/projects.json';
 import StackItemList from '@/app/components/StackItemList';
 import { getMarkdownData } from '@/app/utils/getMarkdown';
 
