@@ -2,7 +2,7 @@ import Image from 'next/image';
 import FormattedDate from '@/app/components/FormattedDate';
 import experiences from '@/data/experience/experience.json';
 import StackItemList from '@/app/components/StackItemList';
-import MarkdownComponent from '@/app/components/MarkdownComponent';
+import { getMarkdownData } from '@/app/utils/getMarkdown';
 
 export default async function SlugExperiencePage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
@@ -11,6 +11,8 @@ export default async function SlugExperiencePage({ params }: { params: Promise<{
   if (!experience) {
     return <div className="text-center text-red-500 mt-100">Failed to load experience</div>;
   }
+
+  const description = await getMarkdownData(experience.description_url);
 
   return (
     <main className="mx-auto">
@@ -30,7 +32,10 @@ export default async function SlugExperiencePage({ params }: { params: Promise<{
         <StackItemList stack={experience.stack} />
       </div>
 
-      <MarkdownComponent url={experience.description_url} />
+      <article
+        className="prose"
+        dangerouslySetInnerHTML={{ __html: description }}
+      />
     </main>
   );
 }  
