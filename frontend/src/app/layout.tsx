@@ -15,7 +15,7 @@ emailjs.init('JNd0vOdj2bMUV9tW9');
 
 export const metadata: Metadata = {
   title: 'Ryan Wong: Personal Portfolio',
-  description: `Ryan Wong's Software Engineer portfolio showcasing projects, experience, and technical expertise.`,
+  description: 'Ryan Wong\'s Software Engineer portfolio showcasing projects, experience, and technical expertise.',
   keywords: ['Software Engineer', 'Full Stack Developer', 'Web Development'],
   authors: [{ name: 'Ryan Wong' }],
   creator: 'Ryan Wong',
