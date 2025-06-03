@@ -12,7 +12,6 @@ type Props = {
     start_date: string;
     end_date: string;
     header: string;
-    description_url: string;
     stack: string[];
   }
 };

@@ -9,7 +9,6 @@ type Props = {
     end_date: string;
     stack: string[];
     header: string;
-    description_url: string;
     github_url: string;
   }
 };
