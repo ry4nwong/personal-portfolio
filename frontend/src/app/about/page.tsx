@@ -1,4 +1,4 @@
-import { FileUser, BookOpen, ScrollText, BicepsFlexed } from 'lucide-react';
+import { ScrollText } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
 import ContactSection from '../components/home/ContactSection';

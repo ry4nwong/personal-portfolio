@@ -1,4 +1,3 @@
-import Link from 'next/link';
 import Image from 'next/image';
 import IntroSection from './components/home/IntroSection';
 import LogoCarousel from './components/home/LogoCarousel';
