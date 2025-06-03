@@ -2,7 +2,7 @@ import { getMarkdownData } from '@/app/utils/getMarkdown';
 import { FileUser } from 'lucide-react';
 
 export default async function AboutSection() {
-  const description = await getMarkdownData('src/data/about/about.md');
+  const description = await getMarkdownData('/data/about/about.md');
 
   return (
     <section className="flex flex-col px-10 py-10 gap-5 card bg-[var(--card-bg-dark)]">

@@ -2,7 +2,7 @@ import { BookOpen } from 'lucide-react';
 import { getMarkdownData } from '@/app/utils/getMarkdown';
 
 export default async function HistorySection() {
-  const description = await getMarkdownData('src/data/about/history.md');
+  const description = await getMarkdownData('/data/about/history.md');
 
   return (
     <section className="flex flex-col px-10 py-10 gap-5 card bg-[var(--card-bg-dark)]">
