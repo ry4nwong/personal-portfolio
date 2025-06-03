@@ -13,7 +13,6 @@ export async function generateStaticParams() {
     { slug: 'festival-recommender' },
     { slug: 'gainz' },
     { slug: 'food-locker' },
-    { slug: 'cantamar-auto-detailing' },
   ];
 }
 

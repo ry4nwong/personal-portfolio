@@ -55,7 +55,7 @@
     },
     {
         "title": "Cantamar Auto Detailing",
-        "slug": "cantamar-auto-detailing",
+        "slug": "cad",
         "start_date": "May 2020",
         "end_date": "October 2021",
         "stack": ["Javascript", "HTML", "CSS", "MySQL"],
