@@ -1,4 +1,4 @@
-import projects from '@/app/projects/projects.json';
+import projects from '@/app/json/projects.json';
 import ProjectListItem from '../components/projects/ProjectListItem';
 import ProjectHeader from '../components/projects/ProjectHeader';
 

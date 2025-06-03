@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import FormattedDate from '@/app/components/FormattedDate';
-import experiences from '@/app/experience/experience.json';
+import experiences from '@/app/json/experience.json';
 import StackItemList from '@/app/components/StackItemList';
 import { getMarkdownData } from '@/app/utils/getMarkdown';
 
