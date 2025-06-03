@@ -17,15 +17,15 @@ export async function generateStaticParams() {
   ];
 }
 
-export default async function SlugProjectPage({ params }: { params: { slug: string } }) {
-  const { slug } = params;
+export default async function SlugProjectPage({ params }: { params: Promise<{ slug: string }> }) {
+  const { slug } = await params;
   const project = projects.find((project) => project.slug === slug);
 
   if (!project) {
     return <div className="text-center text-red-500 mt-100">Failed to load project</div>;
   }
 
-  const description = await getMarkdownData(`src/data/projects/${params.slug}.md`);
+  const description = await getMarkdownData(`src/data/projects/${slug}.md`);
 
   return (
     <main className="mx-auto">
