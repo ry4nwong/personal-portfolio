@@ -4,7 +4,20 @@ import projects from '@/app/json/projects.json';
 import StackItemList from '@/app/components/StackItemList';
 import { getMarkdownData } from '@/app/utils/getMarkdown';
 
-export default async function SlugProjectPage({ params }: { params: Promise<{ slug: string }> }) {
+export async function generateStaticParams() {
+  return [
+    { slug: 'cad' },
+    { slug: 'personal_portfolio' },
+    { slug: 'intake-agent' },
+    { slug: 'tick-exchange' },
+    { slug: 'festival-recommender' },
+    { slug: 'gainz' },
+    { slug: 'food-locker' },
+    { slug: 'cantamar-auto-detailing' },
+  ];
+}
+
+export default async function SlugProjectPage({ params }: { params: { slug: string } }) {
   const { slug } = await params;
   const project = projects.find((project) => project.slug === slug);
 
@@ -12,7 +25,7 @@ export default async function SlugProjectPage({ params }: { params: Promise<{ sl
     return <div className="text-center text-red-500 mt-100">Failed to load project</div>;
   }
 
-  const description = await getMarkdownData(project.description_url);
+  const description = await getMarkdownData(`src/data/projects/${params.slug}.md`);
 
   return (
     <main className="mx-auto">

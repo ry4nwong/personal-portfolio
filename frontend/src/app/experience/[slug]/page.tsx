@@ -4,7 +4,14 @@ import experiences from '@/app/json/experience.json';
 import StackItemList from '@/app/components/StackItemList';
 import { getMarkdownData } from '@/app/utils/getMarkdown';
 
-export default async function SlugExperiencePage({ params }: { params: Promise<{ slug: string }> }) {
+export async function generateStaticParams() {
+  return [
+    { slug: 'intuit' },
+    { slug: 'sephora' },
+  ];
+}
+
+export default async function SlugExperiencePage({ params }: { params: { slug: string } }) {
   const { slug } = await params;
   const experience = experiences.find((experience) => experience.slug === slug);
 
@@ -12,7 +19,7 @@ export default async function SlugExperiencePage({ params }: { params: Promise<{
     return <div className="text-center text-red-500 mt-100">Failed to load experience</div>;
   }
 
-  const description = await getMarkdownData(experience.description_url);
+  const description = await getMarkdownData(`src/data/experience/${params.slug}.md`);
 
   return (
     <main className="mx-auto">
