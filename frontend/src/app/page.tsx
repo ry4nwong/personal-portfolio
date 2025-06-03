@@ -49,6 +49,7 @@ export default function Home() {
                 width={20}
                 height={20}
                 quality={100}
+                unoptimized={true}
                 className="w-70 h-70 object-contain"
               />
             </section>

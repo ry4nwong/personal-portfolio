@@ -35,6 +35,7 @@ export default async function AboutPage() {
               width={50}
               height={50}
               quality={100}
+              unoptimized={true}
               className="w-full h-full object-cover rounded-2xl"
             />
           </section>
