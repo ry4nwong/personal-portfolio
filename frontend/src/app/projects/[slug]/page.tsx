@@ -18,7 +18,7 @@ export async function generateStaticParams() {
 }
 
 export default async function SlugProjectPage({ params }: { params: { slug: string } }) {
-  const { slug } = await params;
+  const { slug } = params;
   const project = projects.find((project) => project.slug === slug);
 
   if (!project) {

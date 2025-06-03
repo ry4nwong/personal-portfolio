@@ -12,7 +12,7 @@ export async function generateStaticParams() {
 }
 
 export default async function SlugExperiencePage({ params }: { params: { slug: string } }) {
-  const { slug } = await params;
+  const { slug } = params;
   const experience = experiences.find((experience) => experience.slug === slug);
 
   if (!experience) {
