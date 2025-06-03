@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import { getStackDetails } from '../utils/getStackDetails';
-import stackItems from '@/data/stackItems.json';
+import stackItems from '@/app/json/stackItems.json';
 
 export default async function StackItemList({ stack }: { stack: string[] }) {
   const filteredStack = await getStackDetails(stack, stackItems);

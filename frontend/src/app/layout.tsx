@@ -4,7 +4,7 @@ import './globals.css';
 import emailjs from '@emailjs/browser';
 
 import NavBar from './components/nav/NavBar';
-import Footer from './components/Footer';
+import Footer from './components/MainFooter';
 
 const inter = Inter({
   subsets: ['latin'],

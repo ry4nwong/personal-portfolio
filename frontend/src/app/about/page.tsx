@@ -1,23 +1,17 @@
 import { FileUser, BookOpen, ScrollText, BicepsFlexed } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
-import MarkdownComponent from '../components/MarkdownComponent';
 import ContactSection from '../components/home/ContactSection';
+import AboutSection from '../components/about/AboutSection';
+import FitnessSection from '../components/about/FitnessSection';
+import HistorySection from '../components/about/HistorySection';
 
 export default async function AboutPage() {
   return (
     <main className="mx-auto">
       <div className="grid grid-cols-1 md:grid-cols-2 items-start w-full flex-grow gap-8">
         <div className="flex flex-col gap-8">
-          <section className="flex flex-col px-10 py-10 gap-5 card bg-[var(--card-bg-dark)]">
-            <div className="mb-3 px-3">
-              <FileUser size={40} />
-            </div>
-            <h1 className="px-3 text-4xl font-bold text-left text-[var(--foreground)]">
-              About Me
-            </h1>
-            <MarkdownComponent url="src/data/about/about.md" />
-          </section>
+          <AboutSection />
 
           <section className="border border-[var(--border)] rounded-2xl overflow-hidden shadow-lg">
             <iframe
@@ -30,15 +24,7 @@ export default async function AboutPage() {
             />
           </section>
 
-          <section className="flex flex-col px-10 py-10 gap-5 card bg-[var(--card-bg-dark)]">
-            <div className="mb-3 px-3">
-              <BicepsFlexed size={40} />
-            </div>
-            <h1 className="px-3 text-4xl font-bold text-left text-[var(--foreground)]">
-              Fitness
-            </h1>
-            <MarkdownComponent url="src/data/about/fitness.md" />
-          </section>
+          <FitnessSection />
         </div>
 
         <div className="flex flex-col gap-8">
@@ -48,6 +34,8 @@ export default async function AboutPage() {
               alt="Headshot"
               width={50}
               height={50}
+              quality={100}
+              unoptimized={true}
               className="w-full h-full object-cover rounded-2xl"
             />
           </section>
@@ -67,15 +55,7 @@ export default async function AboutPage() {
 
           </section>
 
-          <section className="flex flex-col px-10 py-10 gap-5 card bg-[var(--card-bg-dark)]">
-            <div className="mb-3 px-3">
-              <BookOpen size={40} />
-            </div>
-            <h1 className="px-3 text-4xl font-bold text-left text-[var(--foreground)]">
-              History
-            </h1>
-            <MarkdownComponent url="src/data/about/history.md" />
-          </section>
+          <HistorySection />
 
           <ContactSection />
         </div>

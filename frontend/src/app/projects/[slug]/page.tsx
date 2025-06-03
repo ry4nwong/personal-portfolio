@@ -1,17 +1,30 @@
 import Link from 'next/link';
 import FormattedDate from '@/app/components/FormattedDate';
-import projects from '@/data/projects/projects.json';
+import projects from '@/app/json/projects.json';
 import StackItemList from '@/app/components/StackItemList';
-import MarkdownComponent from '@/app/components/MarkdownComponent';
+import { getMarkdownData } from '@/app/utils/getMarkdown';
 
+export async function generateStaticParams() {
+  return [
+    { slug: 'cad' },
+    { slug: 'personal-portfolio' },
+    { slug: 'intake-agent' },
+    { slug: 'tick-exchange' },
+    { slug: 'festival-recommender' },
+    { slug: 'gainz' },
+    { slug: 'food-locker' },
+  ];
+}
 
 export default async function SlugProjectPage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
   const project = projects.find((project) => project.slug === slug);
 
   if (!project) {
-    return <div className="text-center text-red-500 mt-100">Failed to load projects</div>;
+    return <div className="text-center text-red-500 mt-100">Failed to load project</div>;
   }
+
+  const description = await getMarkdownData(`src/data/projects/${slug}.md`);
 
   return (
     <main className="mx-auto">
@@ -41,7 +54,10 @@ export default async function SlugProjectPage({ params }: { params: Promise<{ sl
         <StackItemList stack={project.stack} />
       </div>
 
-      <MarkdownComponent url={project.description_url} />
+      <article
+        className="prose"
+        dangerouslySetInnerHTML={{ __html: description }}
+      />
     </main>
   );
 }  

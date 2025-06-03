@@ -48,6 +48,8 @@ export default function Home() {
                 alt="Avatar"
                 width={20}
                 height={20}
+                quality={100}
+                unoptimized={true}
                 className="w-70 h-70 object-contain"
               />
             </section>
