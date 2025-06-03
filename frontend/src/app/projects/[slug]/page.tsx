@@ -7,7 +7,7 @@ import { getMarkdownData } from '@/app/utils/getMarkdown';
 export async function generateStaticParams() {
   return [
     { slug: 'cad' },
-    { slug: 'personal_portfolio' },
+    { slug: 'personal-portfolio' },
     { slug: 'intake-agent' },
     { slug: 'tick-exchange' },
     { slug: 'festival-recommender' },
