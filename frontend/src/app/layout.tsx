@@ -5,6 +5,7 @@ import emailjs from '@emailjs/browser';
 
 import NavBar from './components/nav/NavBar';
 import Footer from './components/MainFooter';
+import Script from 'next/script';
 
 const inter = Inter({
   subsets: ['latin'],
@@ -31,6 +32,21 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
+      <head>
+        {/* Google Analytics */}
+        <Script
+          src={`https://www.googletagmanager.com/gtag/js?id=G-ZNSHCKFXD9`}
+          strategy="afterInteractive"
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-ZNSHCKFXD9');
+          `}
+        </Script>
+      </head>
       <body className={`${inter.className} antialiased`}>
         <div className="flex flex-col items-center min-h-screen">
           <NavBar />
